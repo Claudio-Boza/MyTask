@@ -84,15 +84,6 @@ class ListTaks(ft.Column):
                     content=ft.Text('Nenhuma tarefa cadastrada.')                
                     )
                 )
-        #self.update()
-        # CustomThread(self)
-    
-    # def run(self):
-    #     lista = get_task_all()
-    #     for i in lista:
-    #         self.controls.append(CardCustom(i, self))
-    #         print(i.json)
-    #     self.update()
 
         
     def delete_list_task(self, task_id):
@@ -209,11 +200,6 @@ class TaskNotifier(Thread):
                             msg= i.json.get('descricao'),                        
                             title='Task pendente'
                         )
-                        # TODO
-                        # notify.add_actions(
-                        #     label='Finalizar',
-                        #     launch=''
-                        # )
                         notify.show()
                     sleep(300)
                 else:
@@ -229,7 +215,6 @@ def main(page: ft.Page):
         if e.data == "close":
             del notify
             notify.running = False
-            print('passou por aquie')
       
     def client_exited(e):        
         #page.pubsub.unsubscribe_all()
